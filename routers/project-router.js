@@ -59,6 +59,15 @@ router.put('/:id', validateProject, validateProjectId, (req, res) => {
             res.status(201).json({newPost})
         })
 });
+// done
+router.delete('/:id', validateProjectId, (req, res) => {
+    // do your magic!
+    
+    remove(req.params.id)
+        .then(deleteRecordsCount => {
+            res.status(201).json({deleteProjectCount: deleteRecordsCount})
+        })
+});
 
 
 
