@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 
-router.get('/:id', validateUserId, (req, res) => {
+router.get('/:id', validateProjectId, (req, res) => {
     // do your magic!
     try {
         res.status(200).json(req.user)
@@ -15,9 +15,10 @@ router.get('/:id', validateUserId, (req, res) => {
 
 // local Middleware
 function validateProject(req, res, next) {
-
+    next()
 }
 function validateProjectId(req, res, next) {
+    next()
 
 }
 module.exports = router
