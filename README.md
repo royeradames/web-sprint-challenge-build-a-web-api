@@ -61,6 +61,9 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
+Node.js - lets you write javascript outside the browser
+Express - like react for back end. Let you write modern backend code with little boiler plate.
+ 
 1. Understand and explain the use of Middleware?
 1. The basic principles of the REST architectural style.
 1. Understand and explain the use of Express Routers.
