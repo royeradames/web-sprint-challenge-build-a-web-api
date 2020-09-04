@@ -24,8 +24,8 @@ const port = process.env.PORT || 4000
 //middleware
 server.use(morgan('dev'))
 server.use(express.json())
-server.use('projects', projectRouter)
-server.use('action', actionRouter)
+server.use('/projects', projectRouter)
+server.use('/action', actionRouter)
 
 
 server.listen(port, () => {
