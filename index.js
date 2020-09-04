@@ -10,5 +10,24 @@ your file is getting way too big, bring a Router and make it thin, don't worry, 
 there is no data on that route, just write some code, you'll sort it out… don't worry, just hack it…
 I need this code, but don't know where, perhaps should make some middleware, don't worry, just hack it
 
-Go code!
+Go code! 
 */
+// imports
+const express = require("express")
+const morgan = require('morgan')
+const projectRouter = require('./routers/project-router')
+const actionRouter = require('./routers/action-router')
+
+const server = express()
+const port = process.env.PORT || 4000
+
+//middleware
+server.use(morgan('dev'))
+server.use(express.json())
+server.use('/projects', projectRouter)
+server.use('/actions', actionRouter)
+
+
+server.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`)
+})
