@@ -67,6 +67,11 @@ Express - like react for back end. Let you write modern backend code with little
 1. Understand and explain the use of Middleware?
 Middleware is code that act like a middle man that adds functionality to the program.
 1. The basic principles of the REST architectural style.
+-everything is a rource
+-every resource is accessible via a unique URL
+-resources can have mltiple representations
+- communications happens over a stateless protocol (HTTP)
+- resource management happens via HTTP methdos
 1. Understand and explain the use of Express Routers.
 1. Describe tooling used to manually test the correctness of an API.
 
