@@ -14,7 +14,9 @@ Go code!
 */
 // imports
 const express = require("express")
-const morgan = require('morgan')
+const helmet = require('helmet')
+let morgan
+if(process.env.DEVELOPMENT) morgan = require('morgan')
 const projectRouter = require('./routers/project-router')
 const actionRouter = require('./routers/action-router')
 
@@ -22,7 +24,8 @@ const server = express()
 const port = process.env.PORT || 4000
 
 //middleware
-server.use(morgan('dev'))
+server.use(helmet())
+if(process.env.DEVELOPMENT) server.use(morgan('dev'))
 server.use(express.json())
 server.use('/projects', projectRouter)
 server.use('/actions', actionRouter)
