@@ -35,10 +35,21 @@ router.post('/', validateAction, (req, res) => {
         })
 });
 router.put('/:id', validateActionId, validateAction, (req, res) => {
-    res.status(200).json(req.action)
+    const updateAction = {
+        project_id: req.body.project_id,
+        description: req.body.description,
+        notes: req.body.notes
+    }
+    update(req.params.id, updateAction)
+        .then(newPost => {
+            res.status(201).json({newPost})
+        })
 });
 router.delete('/:id', (req, res) => {
-    res.status(200).json(req.action)
+    remove(req.params.id)
+        .then(deleteRecordsCount => {
+            res.status(201).json({deleteActionCount: deleteRecordsCount})
+        })
 });
 
 // local Middleware
