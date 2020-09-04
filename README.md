@@ -63,8 +63,9 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 1. The core features of Node.js and Express and why they are useful.
 Node.js - lets you write javascript outside the browser
 Express - like react for back end. Let you write modern backend code with little boiler plate.
- 
+
 1. Understand and explain the use of Middleware?
+Middleware is code that act like a middle man that adds functionality to the program.
 1. The basic principles of the REST architectural style.
 1. Understand and explain the use of Express Routers.
 1. Describe tooling used to manually test the correctness of an API.
