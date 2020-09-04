@@ -73,6 +73,7 @@ Middleware is code that act like a middle man that adds functionality to the pro
 - communications happens over a stateless protocol (HTTP)
 - resource management happens via HTTP methdos
 1. Understand and explain the use of Express Routers.
+Express routers act like a middle man that you can use to compartmentalize your HTTP methods in a different file and later in the index.js you can add it has a middleware.
 1. Describe tooling used to manually test the correctness of an API.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
