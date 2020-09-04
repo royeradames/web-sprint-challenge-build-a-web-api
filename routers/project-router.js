@@ -34,7 +34,6 @@ router.get('/:id/actions', validateProjectId, (req, res) => {
 
 //done
 router.post('/', validateProject, (req, res) => {
-    // do your magic!
     const newProject = {
         name: req.body.name,
         description: req.body.description,

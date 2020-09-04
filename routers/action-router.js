@@ -18,7 +18,26 @@ router.get('/', (req, res) => {
         res.status(500).json({ error: 'server cannot find actions' })
     }
 });
+// done
 router.get('/:id', validateActionId, (req, res) => {
+    res.status(200).json(req.action)
+});
+// done
+router.post('/', validateAction, (req, res) => {
+    const newAction = {
+        project_id: req.body.project_id,
+        description: req.body.description,
+        notes: req.body.notes
+    }
+    insert(newAction)
+        .then(newPost => {
+            res.status(201).json({newPost})
+        })
+});
+router.put('/:id', validateActionId, validateAction, (req, res) => {
+    res.status(200).json(req.action)
+});
+router.delete('/:id', (req, res) => {
     res.status(200).json(req.action)
 });
 
