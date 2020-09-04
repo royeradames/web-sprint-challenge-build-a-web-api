@@ -32,9 +32,32 @@ router.get('/:id/actions', validateProjectId, (req, res) => {
         })
 });
 
-router.post('/:id', validateProjectId, (req, res) => {
+//done
+router.post('/', validateProject, (req, res) => {
     // do your magic!
-   
+    const newProject = {
+        name: req.body.name,
+        description: req.body.description,
+        completed: req.body.completed
+    }
+    insert(newProject)
+        .then(newPost => {
+            res.status(201).json({newPost})
+        })
+});
+
+// done
+router.put('/:id', validateProject, validateProjectId, (req, res) => {
+    // do your magic!
+    const UpdateProject = {
+        name: req.body.name,
+        description: req.body.description,
+        completed: req.body.completed
+    }
+    update(req.params.id, UpdateProject)
+        .then(newPost => {
+            res.status(201).json({newPost})
+        })
 });
 
 
@@ -42,8 +65,7 @@ router.post('/:id', validateProjectId, (req, res) => {
 // local Middleware
 function validateProject(req, res, next) {
     
-    if(!req.completed) req.completed = false
-    if (!req.name || !req.description) {
+    if (!req.body.name || !req.body.description) {
         res.status(404).json({error: 'Name, and description not received'})
     } else {
         next()
